@@ -12,9 +12,25 @@
     */
 
     // Entrada
+
+    const transporteSp = Number(prompt(`Informe o preço do transporte da viagem para São Paulo:`).trim().replace(",","."));
+    const transporteRj = Number(prompt(`Informe o preço do transporte da viagem para Rio de Janeiro:`).trim().replace(",","."));
+    const hotelSp = Number(prompt(`Informe o preço do hotel da viagem para São Paulo:`).trim().replace(",","."));
+    const hotelRj = Number(prompt(`Informe o preço do hotel da viagem para Rio de Janeiro:`).trim().replace(",","."));
+    const dias = Number(prompt(`Informe quantos dias pretende ficar na viagem:`).trim().replace(",","."));
     
     // Processamento
 
+    const viagemSp = (transporteSp + (hotelSp * dias));
+    const viagemRj = (transporteRj + (hotelRj * dias));
+
     // Saída
+
+    if (viagemRj > viagemSp){
+        alert (`A viagem para São Paulo é mais barata.`);
+    }
+    else{
+        alert (`A viagem para o Rio de Janeiro é mais barata`);
+    }
 
 </script>
