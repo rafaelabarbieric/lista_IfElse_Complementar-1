@@ -11,9 +11,27 @@
     */
 
     // Entrada
+
+    const distancia = Number(prompt(`Informe qual a distância da viagem em km:`).replace(",",".").trim());
+    const kmDiario = Number(prompt(`Informe quantos km deseja andar por dia:`));
     
     // Processamento
 
+    const diasViagem = Math.round(distancia / kmDiario);
+
     // Saída
+
+    if(diasViagem <= 3){
+        alert (`A duração da viagem será ${diasViagem} dias e você poderá realizar ela em qualquer período.`);
+    }
+    else if(diasViagem > 3 && diasViagem <= 10){
+        alert (`A duração da viagem será ${diasViagem} dias e você poderá realizar ela nas férias de Julho.`);
+    }
+    else if(diasViagem > 10 && diasViagem <= 20){
+        alert (`A duração da viagem será ${diasViagem} dias e você poderá realizar ela nas Férias de Verão`);
+    }
+    else{
+        alert (`A duração da viagem será ${diasViagem} dias e para poder realizar ela deverá trabalhar remoto.`);
+    }
 
 </script>
