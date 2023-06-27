@@ -12,8 +12,27 @@
     */
 
     // Entrada
-    
+
+    const salario = Number(prompt(`Informe o valor do seu salário:`).trim().replace(",","."));
+    const auxilio = prompt(`Informe se você deseja receber o auxílio transporte: responda com SIM ou NÂO.`).trim().toLocaleLowerCase();
+    const veiculo = prompt(`Informe se você usa seu veículo próprio: responda com SIM ou NÂO.`).trim().toLocaleLowerCase();
+
     // Processamento
+
+    if (auxilio === 'sim' || veiculo === 'sim'){
+        const desconto = (salario * 0.06);
+        if (veiculo === 'sim'){
+            const salarioFinal1 = (salario - desconto) + 200;
+            alert(`O desconto é R$ ${desconto.toFixed(2).replace(".",",")}. E o salário será R$ ${salarioFinal1.toFixed(2).replace(".",",")}.`);
+        }
+        else if (veiculo === 'não'){
+            const salarioFinal2 = salario + 150;
+            alert(`O salário será R$ ${salarioFinal2.toFixed(2).replace(".",",")}.`);
+        }
+    }
+    else{
+        alert(`Valor Inválido.`);
+    }
 
     // Saída
 
