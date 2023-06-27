@@ -16,7 +16,39 @@
 
     // Entrada
     
+    const viagem = Number(prompt(`Informe quantas viagem você realizou no dia:`).trim());
+    const cargo = prompt(`Informe o cargo que você ocupa:`).trim().toLocaleLowerCase();
+
     // Processamento
+    
+    let mensagemFinal = ""
+    
+
+    if (cargo === 'motorista') {
+        mensagemFinal = mensagemFinal + `Motorista,`
+        if (viagem < 10 && viagens > 0) {
+            const total1 = 100 * 1.20;
+            mensagemFinal = mensagemFinal + ` diária = R$ ${total1.toFixed(2).replace('.', ',')}.`;
+        }
+        else if (viagem > 10) {
+            const total2 = 100 * 1.35;
+            mensagemFinal = mensagemFinal + ` diária = R$ ${total2.toFixed(2).replace('.', ',')}.`;
+        }
+    }
+    else if (cargo === 'cobrador') {
+        mensagemFinal = mensagemFinal + `Cobrador,`
+        if (viagem < 10 && viagens > 0) {
+            mensagemFinal = mensagemFinal + ` diária = R$ 100,00.`;
+        }
+        else if (viagem > 10) {
+            const total3 = 100 * 1.10;
+            mensagemFinal = mensagemFinal + ` diária = R$ ${total3.toFixed(2).replace('.', ',')}.`;
+        }
+    }
+    else{
+        mensagemFinal = mensagemFinal + `Valor Inválido!`
+    }
+    alert(mensagemFinal);
 
     // Saída
 
