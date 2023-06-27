@@ -10,9 +10,23 @@
     */
 
     // Entrada
-    
+
+    const valorImovel = Number(prompt(`Informe o valor do imóvel:`).replace(",",".").trim());
+    const anosFinanciamento = Number(prompt(`Informe em quantos anos serão realizado o financiamento:`).replace(",",".").trim());
+    const salario = Number(prompt(`Informe o valor do seu salario:`).replace(",",".").trim());
+
     // Processamento
 
+    const prestacao = (valorImovel / anosFinanciamento) / 12;
+    const porcentagem = salario * 0.30;
+
     // Saída
+
+    if (prestacao <= porcentagem){
+        alert(`O valor da parcela será ${prestacao.toFixed(2).replace(",",".")} e seu financiamento foi concedido.`);
+    }
+    else{
+        alert(`O valor da parcela será ${prestacao.toFixed(2).replace(",",".")} e seu financiamnto não foi concedido.`);
+    }
 
 </script>
